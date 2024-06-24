@@ -30,5 +30,7 @@ jobs:
             export AR=$ANDROID_HOST-ar 
             export RANLIB=$ANDROID_HOST-ranlib 
             export PATH=$ANDROID_NDK/toolchains/$ANDROID_HOST-$ANDROID_TOOLCHAIN_VERSION/prebuilt/$ANDROID_BUILD/bin:$PATH 
+            aclocal
             autoconf
+            autoheader
             ./configure --host=$ANDROID_HOST --with-sysroot=$ANDROID_SYSROOT --enable-static --disable-shared
