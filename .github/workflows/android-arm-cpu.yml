@@ -10,9 +10,9 @@ jobs:
   android:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: build
-    - run: |
+     - uses: actions/checkout@v2
+     - name: build
+       run: |
            export ANDROID_NDK=$ANDROID_NDK_LATEST_HOME && 
            export ANDROID_HOST=aarch64-linux-android &&
            export ANDROID_BUILD=linux-x86_64 &&
