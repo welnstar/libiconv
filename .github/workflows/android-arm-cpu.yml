@@ -13,8 +13,6 @@ jobs:
     - uses: actions/checkout@v2
     - name: build
       run: |
-           chmod +x ./configure
-           
            export ANDROID_NDK=$ANDROID_NDK_LATEST_HOME && 
            export ANDROID_HOST=aarch64-linux-android &&
            export ANDROID_BUILD=linux-x86_64 &&
@@ -27,4 +25,4 @@ jobs:
            export AR=$ANDROID_HOST-ar &&
            export RANLIB=$ANDROID_HOST-ranlib &&
            export PATH=$ANDROID_NDK/toolchains/$ANDROID_HOST-$ANDROID_TOOLCHAIN_VERSION/prebuilt/$ANDROID_BUILD/bin:$PATH &&
-           ./configure --host=$ANDROID_HOST --with-sysroot=$ANDROID_SYSROOT --enable-static --disable-shared
+           sudo sh ./configure --host=$ANDROID_HOST --with-sysroot=$ANDROID_SYSROOT --enable-static --disable-shared
