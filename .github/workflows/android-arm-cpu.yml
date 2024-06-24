@@ -12,7 +12,10 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: build
-      run: export ANDROID_NDK=$ANDROID_NDK_LATEST_HOME && 
+      run: |
+           chmod +x ./configure
+           
+           export ANDROID_NDK=$ANDROID_NDK_LATEST_HOME && 
            export ANDROID_HOST=aarch64-linux-android &&
            export ANDROID_BUILD=linux-x86_64 &&
            export ANDROID_ARCH=arm64 &&
