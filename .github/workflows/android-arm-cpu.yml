@@ -12,9 +12,7 @@ jobs:
     steps:
      - uses: actions/checkout@v2
      - name: Configure
-       run: |
-            sudo apt-get install gettext
-            sudo apt-get install libtool
+       run: sudo apt-get install gettext libtool
      - name: Setup Android NDK
        uses: nttld/setup-ndk@v1.4.2
        with:
