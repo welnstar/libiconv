@@ -17,5 +17,5 @@ jobs:
           ndk-version: r21e
      - name: build
        run: |
-            cd ./scripts
+            cd ${{ github.workspace }}/scripts
             export ANDROID_NDK=$ANDROID_HOME/ndk-bundle && ./build_android.sh
