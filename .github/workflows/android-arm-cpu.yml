@@ -34,4 +34,5 @@ jobs:
             export PATH=$ANDROID_NDK/toolchains/$ANDROID_HOST-$ANDROID_TOOLCHAIN_VERSION/prebuilt/$ANDROID_BUILD/bin:$PATH 
             ./gitsub.sh pull
             ./autogen.sh
-            ./configure --host=$ANDROID_HOST --with-sysroot=$ANDROID_SYSROOT --enable-static --disable-shared
+            autoreconf -fvi -I${{ github.workspace }}/m4 -I${{ github.workspace }}/srcm4
+            ./configure --host=$ANDROID_HOST --with-sysroot=$ANDROID_SYSROOT --disable-nls --enable-static --disable-shared
